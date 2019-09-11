@@ -4,14 +4,25 @@ import { CoursesService } from './courses.service';
 @Component({
   selector: 'course',
   template: `
-    <h1>Title : {{ title }}</h1>
+      <img [src]='imageUrl'>
+      <table>
+          <tr>
+            <!-- <td [colspan]='colSpan'>Some Text</td>  no dome element like colspan error-->
 
-    <h1 [textContent]='title'></h1>
-    <img src={{imageUrl}}>
-    <img [src]='title'>
+            <td [attr.colspan]='colSpan'>Some Text</td>
+            <td>Some Text</td>
+            <td [attr.colspan]='colSpan'>Some Text</td>
+          </tr>
+          <tr>
+            <!-- <td [colspan]='colSpan'>Some Text</td>  no dome element like colspan error-->
+
+            <td>Some Text</td>
+            <td>Some Text</td>
+          </tr>
+      </table>
     `,
 })
 export class CourseComponent {
-  title = "Hello Title"
   imageUrl = 'http://lorempixel.com/300/200/sports/2/'
+  colSpan = 2;
 }
