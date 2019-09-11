@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
 	styleUrls: ['./like.component.css'],
 })
 export class LikeComponent {
-	@Input() likesCount : number;
-	@Input() isLiked : boolean;
+	@Input('likesCount') likesCount : number;
+	@Input('isLiked') isLiked : boolean;
 
 
 	likeTweet(){

@@ -1,17 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoriteChangeEventArgs } from '../favorite/favorite.component';
+import { CoursesService } from './courses.service';
 
 @Component({
-	selector: 'course',
+	selector: 'courses',
 	templateUrl : './course.component.html'
 })
 export class CourseComponent {
-	post = {
-		title : 'title', 
-		isFavorite : false 
-	}
-
-	onFavoriteChange(eventArgs : FavoriteChangeEventArgs){
-		console.log(eventArgs);
-	}
+	courses = [12 ,45] 
+	
 }
