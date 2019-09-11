@@ -1,32 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from './courses.service';
-
-// @Component({
-//   selector: 'course',
-//   template: `
-// 			<input type='text' 
-// 			class='form-control' 
-// 			(keyup.enter)='onEnterKeyPress($event);'>
-// 		`,
-// })
-// export class CourseComponent {
-// 	onEnterKeyPress($event){
-// 		console.log($event.target.value);
-// 	}
-// }
-
-
-// templateting
+import { FormsModule } from '@angular/forms';
 
 @Component({
 	selector: 'course',
+	// two way bindin ...
 	template: `
-			<input #email 
-			(keyup.enter)='onEnterKeyPress(email.value);'>
+			<input [value]='email2' (keyup.enter)='email=$event.target.value; onEnterKeyPress();'/>
+			<hr>
+			<input [(ngModel)]="email" (keyup.enter)='onEnterKeyPress();'/>
 		`,
 })
 export class CourseComponent {
-	onEnterKeyPress(value) {
-		console.log(value);
+	email = 'someEmail@gmail.com' ;
+	email2 = 'someEmail@gmail.com' ;
+	onEnterKeyPress() {
+		console.log(this.email);
 	}
 }
