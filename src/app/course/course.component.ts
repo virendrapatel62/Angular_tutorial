@@ -3,21 +3,11 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
 	selector: 'course',
-	// two way bindin ...
+	// create a pipe and regsiter in module...
 	template: `
-		Title : {{course.title| uppercase}} <br/>
-		Rating : {{course.rating | number:'1.2-3'}} <br/>
-		Student : {{course.students | number }} <br/>
-		Prize : {{course.prize | currency : 'AUD'}} <br/>
-		Date : {{course.releaseDate | date: 'short'}} <br/>
+		{{blog | summary : 100}}
 	`,
 })
 export class CourseComponent {
-	course = {
-		title : 'Angular js Bu Mosh Hamedani sir ' ,
-		rating : 5.212623,
-		students : 456565,
-		prize : 168.365, 
-		releaseDate : new Date(2019 , 12 , 25)
-	}
+	blog = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris in aliquam sem fringilla ut morbi tincidunt augue. A scelerisque purus semper eget duis at tellus at urna. Odio ut enim blandit volutpat maecenas. Interdum velit laoreet id donec ultrices tincidunt arcu non sodales.`
 }
