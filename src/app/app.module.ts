@@ -4,18 +4,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './course/courses.service';
+import { AutherComponent } from './auther/auther.component';
+import { AutherService } from './auther/auther.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent , 
+    CourseComponent,
+    AutherComponent , 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [
-    CoursesService
+    CoursesService , 
+    AutherService
   ],
   bootstrap: [AppComponent]
 })
