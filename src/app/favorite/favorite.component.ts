@@ -1,22 +1,29 @@
-import { Component, OnInit  , Input , Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'favorite',
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.css']
 })
-export class FavoriteComponent implements OnInit{
-  @Input('is-favorite') isSelected : boolean ;
+export class FavoriteComponent implements OnInit {
+  @Input('is-favorite') isSelected: boolean;
   @Output() change = new EventEmitter();
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
 
   }
 
-  doFavorite(){
-    this.isSelected = !this.isSelected 
-    this.change.emit();
+  doFavorite() {
+    this.isSelected = !this.isSelected
+    this.change.emit(new FavoriteChangeEventArgs(this.isSelected));
   }
 
+}
+
+export class FavoriteChangeEventArgs{
+	newValue : boolean
+	constructor(val : boolean){
+		this.newValue = val; 
+	}
 }
