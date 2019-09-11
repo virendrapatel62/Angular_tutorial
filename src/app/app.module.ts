@@ -15,7 +15,7 @@ import { AutherService } from './auther/auther.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule 
   ],
   providers: [
     CoursesService , 
