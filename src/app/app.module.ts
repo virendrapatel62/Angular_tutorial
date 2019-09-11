@@ -11,6 +11,7 @@ import { AutherService } from './auther/auther.service';
 import { SummaryPipe } from 'src/summary.pipes';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
+import { LikeComponent } from './like/like.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { PanelComponent } from './panel/panel.component';
     AppComponent,
     CourseComponent,
     AutherComponent , 
-    SummaryPipe, FavoriteComponent, PanelComponent
+    SummaryPipe, FavoriteComponent, PanelComponent, LikeComponent
   ],
   imports: [
     BrowserModule,

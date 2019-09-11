@@ -1,0 +1,17 @@
+<style>
+    .red {
+        color: deeppink;
+    }
+
+    .gray {
+        color: #ccc;
+    }
+
+    .fa-heart{
+        cursor: pointer;
+    }
+</style>
+
+
+<span class="fas fa-heart" [class.red]='isLiked' [class.gray]='!isLiked' (click)='likeTweet();'></span>
+<span>&nbsp;{{likesCount}}</span>
