@@ -1,4 +1,21 @@
 <h1>Angular</h1>
 <hr>
 
-<courses></courses>
+<ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" [class.active]="viewMode== 'map'" (click)='viewMode = "map"' href="#">Map View</a></li>
+	<li class="nav-item"><a class="nav-link" [class.active]="viewMode == 'list'" (click)='viewMode = "list"' href="#">List View</a></li>
+</ul>
+
+<div [ngSwitch]='viewMode'>
+	<div *ngSwitchCase="'map'"  class="border p-3 m-3 rounded">
+		<h1>Map View</h1>
+	</div>
+
+	<div *ngSwitchCase="'list'" class="border p-3 m-3 rounded">
+		<h1>List View....</h1>
+	</div>
+
+	<div  class="border p-3 m-3 rounded" *ngSwitchDefault>
+		<h1>Other....</h1>
+	</div>
+</div>

@@ -6,12 +6,5 @@ import { Component , Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'FirstApp';
-
-  tweet = {
-		text : "Some Text" , 
-		likesCount : 56,
-		isLiked : true
-	}
-  
+  viewMode = 'somthis'
 }

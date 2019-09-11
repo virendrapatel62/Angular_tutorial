@@ -8,5 +8,4 @@ import { CoursesService } from './courses.service';
 })
 export class CourseComponent {
 	courses = []
-	
 }
