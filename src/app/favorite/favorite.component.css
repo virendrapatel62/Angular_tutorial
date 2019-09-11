@@ -1,4 +1,3 @@
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
 .far , .fas{
-    color: red; 
+    color: rgb(45, 128, 123); 
 }
