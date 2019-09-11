@@ -5,15 +5,19 @@ import { FormsModule } from '@angular/forms';
 	selector: 'course',
 	// two way bindin ...
 	template: `
-			<input [value]='email2' (keyup.enter)='email=$event.target.value; onEnterKeyPress();'/>
-			<hr>
-			<input [(ngModel)]="email" (keyup.enter)='onEnterKeyPress();'/>
-		`,
+		Title : {{course.title| uppercase}} <br/>
+		Rating : {{course.rating | number:'1.2-3'}} <br/>
+		Student : {{course.students | number }} <br/>
+		Prize : {{course.prize | currency : 'AUD'}} <br/>
+		Date : {{course.releaseDate | date: 'short'}} <br/>
+	`,
 })
 export class CourseComponent {
-	email = 'someEmail@gmail.com' ;
-	email2 = 'someEmail@gmail.com' ;
-	onEnterKeyPress() {
-		console.log(this.email);
+	course = {
+		title : 'Angular js Bu Mosh Hamedani sir ' ,
+		rating : 5.212623,
+		students : 456565,
+		prize : 168.365, 
+		releaseDate : new Date(2019 , 12 , 25)
 	}
 }
