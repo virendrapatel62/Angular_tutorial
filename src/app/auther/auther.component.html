@@ -1,1 +1,7 @@
-<p>auther works!</p>
+<h1>{{authers.length}} Auther</h1>
+
+<table>
+    <tr *ngFor='let auther of authers ;index as i'>
+        <td>{{i+1}} => {{auther}}</td>
+    </tr>
+</table>
