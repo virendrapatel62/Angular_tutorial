@@ -7,6 +7,6 @@ import { CoursesService } from './courses.service';
 	templateUrl : './course.component.html'
 })
 export class CourseComponent {
-	courses = [12 ,45] 
+	courses = []
 	
 }

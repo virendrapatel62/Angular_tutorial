@@ -1,42 +1,8 @@
-<!-- case 3  -->
 
-<div *ngIf='courses.length > 0  then coursesList else noCourses'>
+<div [hidden]='courses.length == 0 '>
+    <div class="alert alert-info">Courses List</div>
 </div>
 
-<ng-template #coursesList>
-    <div class="alert alert-success">
-        Courses List
-    </div>
-</ng-template>
-
-<ng-template #noCourses>
-    <div class="alert alert-danger">
-        No Courses Yet
-    </div>
-</ng-template>
-
-
-
-<!-- case 2:  -->
-
-<!-- <div *ngIf='courses.length > 0 else noCourses'>
-    List of Courses...
+<div [hidden]='courses.length > 0'>
+    <div class="alert alert-warning">No Courses Yet</div>
 </div>
-
-<ng-template #noCourses >
-    <div class="alert alert-danger">
-            No Courses Yet
-    </div>
-    
-</ng-template> -->
-
-
-<!-- case 1 -->
-<!-- 
-<div *ngIf='courses.length > 0'>
-	List of Courses...
-</div>
-
-<div *ngIf='courses.length == 0'>
-	No Courses Yet...
-</div> -->
