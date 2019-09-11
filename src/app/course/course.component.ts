@@ -9,4 +9,9 @@ export class CourseComponent {
 		title : 'title', 
 		isFavorite : false 
 	}
+
+	onFavoriteChange(){
+		console.log('changed...');
+		
+	}
 }
