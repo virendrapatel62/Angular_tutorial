@@ -13,6 +13,11 @@ export class ContactFormComponent{
 
 	log(firstName){
 		console.log(firstName);
+	}
+
+	submit(form){
+		console.log(form);
+		console.log(form.value);
 		
 	}
 }
