@@ -2,14 +2,19 @@
     <form action="">
         <div class="form-group">
             <label for="firstName">First Name</label>
-            <input type="text" id='firstName' class="form-control">
+            <input type="text" required minlength="3" maxlength="15" pattern="banana" ngModel #firstName='ngModel' (change)='log(firstName)' name='firstName'
+                id='firstName' class="form-control">
+            <div class="alert alert-danger p-1" *ngIf='firstName.touched && firstName.invalid'>
+                <div *ngIf='firstName.errors.required'>First Name is Required..</div>
+                <div *ngIf='firstName.errors.minlength'>Minimum length is 3</div>
+                <div *ngIf='firstName.errors.maxlength'>Max Length is 15</div>
+                <div *ngIf='firstName.errors.pattern'>Pattern not matched</div>
+            </div>
         </div>
-
         <div class="form-group">
             <label for="comment">Comment</label>
-            <textarea name="" id="comment" cols="30" rows="5" class="form-control"></textarea>
+            <textarea name="comment" ngModel id="comment" cols="30" rows="5" class="form-control"></textarea>
         </div>
-
         <div class="form-group">
             <input type="button" class="btn btn-info" value="Submit">
         </div>

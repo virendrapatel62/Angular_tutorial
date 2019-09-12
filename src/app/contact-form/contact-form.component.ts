@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.css']
+	selector: 'app-contact-form',
+	templateUrl: './contact-form.component.html',
+	styleUrls: ['./contact-form.component.css']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent{
 
-  constructor() { }
+	constructor() {
 
-  ngOnInit() {
-  }
+	}
 
+	log(firstName){
+		console.log(firstName);
+		
+	}
 }
