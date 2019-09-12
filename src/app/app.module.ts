@@ -12,23 +12,28 @@ import { SummaryPipe } from 'src/summary.pipes';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './input-format.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    AutherComponent , 
-    SummaryPipe, FavoriteComponent, PanelComponent, LikeComponent
+    AutherComponent,
+    SummaryPipe,
+    FavoriteComponent,
+    PanelComponent,
+    LikeComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule  , 
-    
+    AppRoutingModule,
+
   ],
   providers: [
-    CoursesService , 
+    CoursesService,
     AutherService
   ],
   bootstrap: [AppComponent]

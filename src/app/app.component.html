@@ -1,25 +1,12 @@
 <h1>Angular</h1>
 <hr>
 
+
 <div class="alert alert-success">
-	List Of Courses...
+	<h4>Creating Custom Directive</h4>
 </div>
 
-<div class="p-2 m-2">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>SNO.</th>
-				<th>ID</th>
-				<th>Name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor='let course of courses; index as ind ; even as e'>
-				<td>{{ind + 1}}</td>
-				<td>{{course.id}}</td>
-				<td>{{course.name}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div>
+	<input type="text" name="" class="form-control" appInputFormat [format]="'lowercase'" id="" placeholder="enter Some Text">
 </div>
+
