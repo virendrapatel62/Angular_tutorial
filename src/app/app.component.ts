@@ -13,4 +13,4 @@ export class AppComponent {
 		{id : 3 , name : 'Advance Java'},
 		{id : 2 , name : 'Angular'},
 	]
-}
+} 

@@ -1,0 +1,13 @@
+<div class="zippy border rounded m-1">
+    <div class="zippy-heading" [class.expanded]='isExpanded' (click)='expand()'>
+        <h4 class="p-2">{{title}} 
+            <i class='fa' 
+            [ngClass]="{
+                'fa-arrow-up' : isExpanded,
+                'fa-arrow-down' : !isExpanded
+            }"></i></h4>
+    </div>
+    <div class="zippy-body p-2" [hidden]='!isExpanded'>
+        <ng-content></ng-content>
+    </div>
+</div>
