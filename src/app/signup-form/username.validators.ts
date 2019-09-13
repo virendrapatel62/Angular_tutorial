@@ -1,4 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { resolve } from 'dns';
+import { reject } from 'q';
 export class UsernameValidators {
     static cannotContainSpace(control: AbstractControl): ValidationErrors | null {
         if ((<string>control.value).indexOf(' ') >= 0) {
@@ -9,18 +11,22 @@ export class UsernameValidators {
     }
 
 
-    static shouldBeUnique(control: AbstractControl): ValidationErrors | null {
+    static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
         // asychronous Request 
         //....
-        setTimeout(() => {
-            console.log('sending request to server ==== ok');
+        console.log('Should Be Unique...');
+        
 
-            if (control.value == 'Virendra') {
-                return { shouldBeUnique: true };
-            }
-        }, 2000)
-        return null;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('sending request to server ==== ok');
+                if (control.value == 'Virendra') {
+                    resolve( { shouldBeUnique: true });
+                }else{
+                    resolve(null)
+                }
+            }, 2000)
+        })
 
-        // it always return null this is the problem so next example will solve it 
     }
 }

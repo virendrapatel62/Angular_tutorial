@@ -12,12 +12,9 @@ export class SignupFormComponent implements OnInit {
 
   
   form = new FormGroup({
-    username : new FormControl('' , [
-      Validators.required , 
-      Validators.minLength(3) , 
-      Validators.maxLength(15),
-      UsernameValidators.cannotContainSpace
-    ]),
+
+    // Third Arg is Asyn Validator ...
+    username : new FormControl('' ,Validators.required, UsernameValidators.shouldBeUnique),
     password : new FormControl('' , Validators.required)
   })
 
