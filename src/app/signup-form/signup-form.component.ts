@@ -15,6 +15,15 @@ export class SignupFormComponent implements OnInit {
     password : new FormControl('' , Validators.required)
   })
 
+  get username(){
+    console.log('username getter called');
+    return this.form.get('username');
+  }
+  get password(){
+    console.log('password getter called..');
+    return this.form.get('password');
+  }
+
   constructor() {
   }
 

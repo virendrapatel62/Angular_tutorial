@@ -7,7 +7,8 @@
         <div class="form-group">
             <label for="username">Username</label>
             <input formControlName='username' type="email" id="username" class="form-control">
-            <div class="alert alert-danger" *ngIf="form.get('username').invalid && form.get('username').touched">
+            <!-- it will call getter of username -->
+            <div class="alert alert-danger" *ngIf="username.invalid && username.touched">
                 User name is Requeired...
             </div>
         </div>
