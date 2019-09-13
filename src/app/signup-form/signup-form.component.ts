@@ -19,11 +19,11 @@ export class SignupFormComponent implements OnInit {
   })
 
   get username(){
-    console.log('username getter called');
+    // console.log('username getter called');
     return this.form.get('username');
   }
   get password(){
-    console.log('password getter called..');
+    // console.log('password getter called..');
     return this.form.get('password');
   }
 
@@ -31,6 +31,15 @@ export class SignupFormComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  login(){
+    console.log('login method');
+    this.form.setErrors(
+      {
+        invalidLogin : true
+      }
+    )
   }
 
 }
