@@ -1,0 +1,11 @@
+
+
+<div class="alert alert-info">FormArray Class</div>
+<div>
+    <form (ngSubmit)='saveCourse(topic)'>
+        <input type="text" #topic class="form-control" name='topic' placeholder="Enter Topic">
+        <ul class="list-group">
+            <li class="list-group-item" (click)='remove(topic)' *ngFor='let topic of topics.controls'>{{topic.value}}</li>
+        </ul>
+    </form>
+</div>
