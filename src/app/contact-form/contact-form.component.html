@@ -22,6 +22,15 @@
             </div>
         </div>
 
+        <div class="checkbox">
+            <label for="">isSubscribed
+                <input type="checkbox" ngModel #isSubscribed='ngModel' name='isSubscribed'>
+            </label>
+        </div>
+
+        <!-- using pipe converted to json  -->
+        <p>{{f.value | json }}</p>
+
         <div class="form-group">
             <input type="submit" [disabled]='f.invalid' class="btn btn-info" value="Submit">
         </div>
