@@ -30,12 +30,22 @@
 
         <div class="form-group">
             <label for="paymentMethod">Contact Method</label>
-            <select name="paymentMethod" multiple ngModel #paymentMethod='ngModel' id="paymentMethod" class="form-control">
+            <select name="paymentMethod" multiple ngModel #paymentMethod='ngModel' id="paymentMethod"
+                class="form-control">
                 <!-- <option *ngFor='let method of contactMethods' value="{{method.id}}">{{method.name}}</option> -->
-                
+
                 <!-- complax object in value -->
                 <option *ngFor='let method of contactMethods' [ngValue]="method">{{method.name}}</option>
             </select>
+        </div>
+
+        <div  class="p-2 border rounded">
+            <h5>Payment Method</h5>
+            <div class="radio" for="" *ngFor='let method of contactMethods'>
+                <label>
+                    <input type="radio" ngModel value='{{method.id}}' name="contactMethod">&nbsp;{{method.name}}
+                </label>
+            </div>
         </div>
 
         <!-- using pipe converted to json  -->
