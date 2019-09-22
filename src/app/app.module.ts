@@ -21,6 +21,7 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
 import { UserComponent } from './user/user.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     CoursesService,
-    AutherService , 
+    AutherService ,
+    UserService 
   ],
   bootstrap: [AppComponent]
 })

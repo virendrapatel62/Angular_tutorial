@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'users',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent{
+export class UserComponent implements OnInit{
 	users  : Array<Object>;
-	url = 'http://jsonplaceholder.typicode.com/users';
 	
-	constructor(private http: HttpClient){
+	
+	constructor(private service: UserService){
+		// donot call http request in constructer 
+	}
+
+	ngOnInit(){
 		this.getUsers();
 	}
 
 	getUsers(){
-		this.http.get(this.url)
+		this.service.getUsers()
 		.subscribe((response)=>{
 			this.users = response as Array<Object>;	
 		})
@@ -25,7 +30,8 @@ export class UserComponent{
 		console.log(input);
 		
 		let name = input.value;
-		this.http.post(this.url , {name : name})
+		let user = {name : name};
+		this.service.createUser(user)
 		.subscribe((response=>{
 			console.log(response);
 			this.users.push(response)
@@ -37,8 +43,7 @@ export class UserComponent{
 		console.log(user);
 		let index = ((this.users) as Array<Object> ).indexOf(user);
 		this.users.splice(index , 1);
-		this.http.delete(this.url + "/" + user['id'])
-		
+		this.service.deleteUser(user)
 		.subscribe((res)=>{
 			console.log(res);
 			
