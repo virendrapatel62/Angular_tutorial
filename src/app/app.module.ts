@@ -19,6 +19,8 @@ import { UdemyCourseFormComponent } from './udemy-course-form/udemy-course-form.
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
+import { UserComponent } from './user/user.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,18 +38,19 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
     UdemyCourseFormComponent,
     SignupFormComponent,
     AddCourseComponent,
-    ChangePasswordFormComponent
+    ChangePasswordFormComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CoursesService,
-    AutherService
+    AutherService , 
   ],
   bootstrap: [AppComponent]
 })
