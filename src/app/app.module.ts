@@ -23,6 +23,8 @@ import { UserComponent } from './user/user.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { AppErrorHandler } from 'src/common/app-error-handler';
+import { GithubComponent } from './github/github.component';
+import { GithubService } from './services/github.service';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { AppErrorHandler } from 'src/common/app-error-handler';
     SignupFormComponent,
     AddCourseComponent,
     ChangePasswordFormComponent,
-    UserComponent
+    UserComponent,
+    GithubComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { AppErrorHandler } from 'src/common/app-error-handler';
   providers: [
     CoursesService,
     AutherService ,
-    UserService , 
+    UserService ,
+    GithubService,
     {provide : ErrorHandler , useClass : AppErrorHandler}
   ],
   bootstrap: [AppComponent]
