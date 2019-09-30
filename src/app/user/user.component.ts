@@ -24,9 +24,6 @@ export class UserComponent implements OnInit {
 		this.service.getUsers()
 			.subscribe((response) => {
 				this.users = response as Array<Object>;
-			}, (error) => {
-				console.log('error Occurd... in Getting User');
-
 			})
 	}
 
@@ -44,12 +41,7 @@ export class UserComponent implements OnInit {
 				},
 
 				(error: Response) => {
-					if (error instanceof NotFoundError) {
-						alert('USer Not Found...')
-					}
-					else {
-						alert('Error OCCurd...')
-					}
+					
 				}
 
 			)
@@ -65,10 +57,7 @@ export class UserComponent implements OnInit {
 					this.users.splice(index, 1);
 				},
 				(err: Response) => {
-					console.log(err);
 					
-					(err instanceof NotFoundError) ? (alert('User Already Deleted ...')) : alert('error');
-
 				})
 	}
 }

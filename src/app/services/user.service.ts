@@ -9,7 +9,7 @@ import { NotFoundError } from 'src/common/not-found-error';
   providedIn: 'root'
 })
 export class UserService {
-  url = 'http://jsonplaceholder.typicode.com/users';
+  url = 'http://jsonplaceholder.typicode.com/user';
   constructor(private http: HttpClient) {
 
   }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -22,6 +22,7 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
 import { UserComponent } from './user/user.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { AppErrorHandler } from 'src/common/app-error-handler';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { UserService } from './services/user.service';
   providers: [
     CoursesService,
     AutherService ,
-    UserService 
+    UserService , 
+    {provide : ErrorHandler , useClass : AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
