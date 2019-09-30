@@ -36,10 +36,13 @@ export class UserService {
       })
   }
 
-  deleteUser(user) {
-    return this.http.delete(this.url + "/" + user['id'])
+  deleteUser(userId) {
+    console.log(userId);
+    
+    return this.http.delete(this.url + "/" + userId)
     .catch((error : Response)=>{
-      if(error.status == 404 ){
+      if(error.status === 404 ){
+        console.log('Already deleted');
         return Observable.throw(new NotFoundError(error));
       }
       else{

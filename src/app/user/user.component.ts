@@ -24,9 +24,9 @@ export class UserComponent implements OnInit {
 		this.service.getUsers()
 			.subscribe((response) => {
 				this.users = response as Array<Object>;
-			} , (error)=>{
-					console.log('error Occurd... in Getting User');
-					
+			}, (error) => {
+				console.log('error Occurd... in Getting User');
+
 			})
 	}
 
@@ -43,11 +43,11 @@ export class UserComponent implements OnInit {
 					input.value = ''
 				},
 
-				(error : Response) => {
-					if(error instanceof NotFoundError){
+				(error: Response) => {
+					if (error instanceof NotFoundError) {
 						alert('USer Not Found...')
 					}
-					else{
+					else {
 						alert('Error OCCurd...')
 					}
 				}
@@ -56,16 +56,19 @@ export class UserComponent implements OnInit {
 	}
 
 	deleteUser(user: Object) {
-		console.log(user);
 		let index = ((this.users) as Array<Object>).indexOf(user);
-		this.users.splice(index, 1);
-		this.service.deleteUser(user)
-			.subscribe((res) => {
-				console.log(res);
+		
+		this.service.deleteUser(4545)
+			.subscribe(
+				(res) => {
+					console.log(res);
+					this.users.splice(index, 1);
+				},
+				(err: Response) => {
+					console.log(err);
+					
+					(err instanceof NotFoundError) ? (alert('User Already Deleted ...')) : alert('error');
 
-			}, (err : Response ) => {
-				(err instanceof NotFoundError) ? (alert('User Already Deleted ...')) : alert('error');
-
-			})
+				})
 	}
 }
