@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
 		this.service.getUsers()
 			.subscribe((response) => {
 				this.users = response as Array<Object>;
-			})
+			} , this.handleError)
 	}
 
 	addUser(input: HTMLInputElement) {
@@ -38,26 +38,24 @@ export class UserComponent implements OnInit {
 					console.log(response);
 					this.users.push(response)
 					input.value = ''
-				},
-
-				(error: Response) => {
-					
-				}
-
-			)
+				},this.handleError)
 	}
 
 	deleteUser(user: Object) {
 		let index = ((this.users) as Array<Object>).indexOf(user);
-		
+
 		this.service.deleteUser(4545)
 			.subscribe(
 				(res) => {
 					console.log(res);
 					this.users.splice(index, 1);
-				},
-				(err: Response) => {
-					
-				})
+				}, this.handleError)
+				
 	}
+
+	private handleError(error : Response){
+		throw new Error();
+	}
+
+
 }
